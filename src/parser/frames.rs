@@ -46,7 +46,7 @@ impl<'a> Frames<'a> {
                     // the function "message_from_id" returns a an AnyMessage from the path in
                     // input
                     let mut path = id[0].clone();
-                    std::string::String::insert_str(&mut path, 0, "../../../../");
+                    std::string::String::insert_str(&mut path, 0, "../../");
                     let message = message_from_path(&[path, id[1].clone()]);
                     // TODO: if a message is taken from a module, should it be allowed to have a
                     // replace_fields? perhaps not. In this case, check that no replace_field
