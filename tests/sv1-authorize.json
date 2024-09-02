@@ -1,0 +1,49 @@
+{
+  "version": "1",
+  "doc": [
+    "This test does",
+    "Sends sv1 mining.authorize",
+    "Checks that the correct response is received"
+  ],
+  "sv1_messages": [
+    {
+      "message": {
+        "id": 3,
+        "method": "mining.authorize",
+        "params": ["username", "password"]
+      },
+      "id": "mining.authorize"
+    }
+  ],
+  "actions": [
+    {
+      "message_ids": ["mining.authorize"],
+      "results": [
+        {
+          "type": "match_message_id",
+          "value": 3,
+          "type": "match_message_field",
+          "value": [
+            "mining.authorize",
+            [
+              [
+                "result",
+                true
+              ]
+            ]
+          ]
+        }
+      ],
+      "actiondoc": "This action sends a mining.authorize and checks that the request and the response have the same id, and the response returns true"
+    }
+  ],
+  "setup_commands": [],
+  "execution_commands": [],
+  "cleanup_commands": [
+  ],
+  "role": "client",
+  "downstream": {
+    "ip": "0.0.0.0",
+    "port": 3333
+  }
+}
